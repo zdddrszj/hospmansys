@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<!-- 连接池Servlet -->
+  <servlet>
+   <servlet-name>ServletConfigurator</servlet-name>
+   <servlet-class>
+	org.logicalcobwebs.proxool.configuration.ServletConfigurator
+   </servlet-class>
+   <init-param>
+      <param-name>xmlFile</param-name>
+      <param-value>WEB-INF/proxool.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- 用户登录  过滤器配置 -->
+  	<filter>
+  		<filter-name>LoginFilter</filter-name>
+  		<filter-class>cn.com.shxt.filter.LoginFilter</filter-class>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>LoginFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  	
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserAccountValidateServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.UserAccountValidateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetProvincesServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetProvincesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetCitysServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetCitysServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OfficeValidateServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.OfficeValidateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConsumerSearchServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.ConsumerSearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConsumerDeleteServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.ConsumerDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConsumerDetailServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.ConsumerDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetOfficesServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetOfficesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConsumerAddServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.ConsumerAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OfficeAddServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.OfficeAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OfficeSearchServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.OfficeSearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OfficeDeleteServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.OfficeDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OfficeModifyServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.OfficeModifyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConsumerModifyServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.ConsumerModifyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetTabKindsServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetTabKindsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabKindValidateServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabKindValidateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabKindAddServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabKindAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabKindSearchServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabKindSearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabKindModifyServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabKindModifyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabKindDeleteServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabKindDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetFactorysServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetFactorysServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FactoryValidateServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.FactoryValidateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FactoryAddServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.FactoryAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FactorySearchServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.FactorySearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FactoryDeleteServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.FactoryDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FactoryDetailServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.FactoryDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FactoryModifyServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.FactoryModifyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabStoreAddServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabStoreAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabStoreSearchServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabStoreSearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabStoreDetailServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabStoreDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabStoreModifyServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabStoreModifyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetTabStoreOrdersServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetTabStoreOrdersServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetTabNamesServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetTabNamesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabStoreDeleteServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabStoreDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TabStoreModifyCount</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.TabStoreModifyCount</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CaseHistoryAddServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.CaseHistoryAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CaseHistorySearchServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.CaseHistorySearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CaseHistoryDeleteServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.CaseHistoryDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CaseHistoryDetailServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.CaseHistoryDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDoctorsServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetDoctorsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetCaseIdsServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetCaseIdsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RegisterAddServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.RegisterAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RegisterCountSearchServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.RegisterCountSearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DiagnoseAddServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.DiagnoseAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DiagnoseFinishServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.DiagnoseFinishServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetTabNameServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetTabNameServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetTabStorePriceCountServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetTabStorePriceCountServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StatisticsOfTabletServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.StatisticsOfTabletServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StatisticsOfDiagCountServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.StatisticsOfDiagCountServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StatisticsOfDiagCostServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.StatisticsOfDiagCostServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StatisticsOfYearMonthServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.StatisticsOfYearMonthServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginValidateServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.LoginValidateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CancleSessionServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.CancleSessionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConsumerModifyPswServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.ConsumerModifyPswServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConsumerOneDetailServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.ConsumerOneDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDoctorServlet</servlet-name>
+    <servlet-class>cn.com.shxt.servlet.GetDoctorServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>UserAccountValidateServlet</servlet-name>
+    <url-pattern>/servlet/UserAccountValidateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetProvincesServlet</servlet-name>
+    <url-pattern>/servlet/GetProvincesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetCitysServlet</servlet-name>
+    <url-pattern>/servlet/GetCitysServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OfficeValidateServlet</servlet-name>
+    <url-pattern>/servlet/OfficeValidateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConsumerSearchServlet</servlet-name>
+    <url-pattern>/servlet/ConsumerSearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConsumerDeleteServlet</servlet-name>
+    <url-pattern>/servlet/ConsumerDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConsumerDetailServlet</servlet-name>
+    <url-pattern>/servlet/ConsumerDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetOfficesServlet</servlet-name>
+    <url-pattern>/servlet/GetOfficesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConsumerAddServlet</servlet-name>
+    <url-pattern>/servlet/ConsumerAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OfficeAddServlet</servlet-name>
+    <url-pattern>/servlet/OfficeAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OfficeSearchServlet</servlet-name>
+    <url-pattern>/servlet/OfficeSearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OfficeDeleteServlet</servlet-name>
+    <url-pattern>/servlet/OfficeDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OfficeModifyServlet</servlet-name>
+    <url-pattern>/servlet/OfficeModifyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConsumerModifyServlet</servlet-name>
+    <url-pattern>/servlet/ConsumerModifyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetTabKindsServlet</servlet-name>
+    <url-pattern>/servlet/GetTabKindsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabKindValidateServlet</servlet-name>
+    <url-pattern>/servlet/TabKindValidateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabKindAddServlet</servlet-name>
+    <url-pattern>/servlet/TabKindAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabKindSearchServlet</servlet-name>
+    <url-pattern>/servlet/TabKindSearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabKindModifyServlet</servlet-name>
+    <url-pattern>/servlet/TabKindModifyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabKindDeleteServlet</servlet-name>
+    <url-pattern>/servlet/TabKindDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetFactorysServlet</servlet-name>
+    <url-pattern>/servlet/GetFactorysServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FactoryValidateServlet</servlet-name>
+    <url-pattern>/servlet/FactoryValidateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FactoryAddServlet</servlet-name>
+    <url-pattern>/servlet/FactoryAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FactorySearchServlet</servlet-name>
+    <url-pattern>/servlet/FactorySearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FactoryDeleteServlet</servlet-name>
+    <url-pattern>/servlet/FactoryDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FactoryDetailServlet</servlet-name>
+    <url-pattern>/servlet/FactoryDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FactoryModifyServlet</servlet-name>
+    <url-pattern>/servlet/FactoryModifyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabStoreAddServlet</servlet-name>
+    <url-pattern>/servlet/TabStoreAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabStoreSearchServlet</servlet-name>
+    <url-pattern>/servlet/TabStoreSearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabStoreDetailServlet</servlet-name>
+    <url-pattern>/servlet/TabStoreDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabStoreModifyServlet</servlet-name>
+    <url-pattern>/servlet/TabStoreModifyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetTabStoreOrdersServlet</servlet-name>
+    <url-pattern>/servlet/GetTabStoreOrdersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetTabNamesServlet</servlet-name>
+    <url-pattern>/servlet/GetTabNamesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabStoreDeleteServlet</servlet-name>
+    <url-pattern>/servlet/TabStoreDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TabStoreModifyCount</servlet-name>
+    <url-pattern>/servlet/TabStoreModifyCount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CaseHistoryAddServlet</servlet-name>
+    <url-pattern>/servlet/CaseHistoryAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CaseHistorySearchServlet</servlet-name>
+    <url-pattern>/servlet/CaseHistorySearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CaseHistoryDeleteServlet</servlet-name>
+    <url-pattern>/servlet/CaseHistoryDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CaseHistoryDetailServlet</servlet-name>
+    <url-pattern>/servlet/CaseHistoryDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDoctorsServlet</servlet-name>
+    <url-pattern>/servlet/GetDoctorsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetCaseIdsServlet</servlet-name>
+    <url-pattern>/servlet/GetCaseIdsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterAddServlet</servlet-name>
+    <url-pattern>/servlet/RegisterAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterCountSearchServlet</servlet-name>
+    <url-pattern>/servlet/RegisterCountSearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DiagnoseAddServlet</servlet-name>
+    <url-pattern>/servlet/DiagnoseAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DiagnoseFinishServlet</servlet-name>
+    <url-pattern>/servlet/DiagnoseFinishServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetTabNameServlet</servlet-name>
+    <url-pattern>/servlet/GetTabNameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetTabStorePriceCountServlet</servlet-name>
+    <url-pattern>/servlet/GetTabStorePriceCountServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsOfTabletServlet</servlet-name>
+    <url-pattern>/servlet/StatisticsOfTabletServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsOfDiagCountServlet</servlet-name>
+    <url-pattern>/servlet/StatisticsOfDiagCountServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsOfDiagCostServlet</servlet-name>
+    <url-pattern>/servlet/StatisticsOfDiagCostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsOfYearMonthServlet</servlet-name>
+    <url-pattern>/servlet/StatisticsOfYearMonthServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginValidateServlet</servlet-name>
+    <url-pattern>/servlet/LoginValidateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CancleSessionServlet</servlet-name>
+    <url-pattern>/servlet/CancleSessionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConsumerModifyPswServlet</servlet-name>
+    <url-pattern>/servlet/ConsumerModifyPswServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConsumerOneDetailServlet</servlet-name>
+    <url-pattern>/servlet/ConsumerOneDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDoctorServlet</servlet-name>
+    <url-pattern>/servlet/GetDoctorServlet</url-pattern>
+  </servlet-mapping>
+
+
+	
+	<!-- 字符集处理  过滤器配置 -->
+  	<filter>
+  		<filter-name>EncodingFilter</filter-name>
+  		<filter-class>cn.com.shxt.filter.EncodingFilter</filter-class>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>EncodingFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  	
+	
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxool-config>
+   <proxool>
+      <alias>datasource</alias>
+      <driver-url>jdbc:oracle:thin:@127.0.0.1:1521:orcl</driver-url>
+      <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+      <driver-properties>
+      <property name="user" value="user"/>
+      <property name="password" value="root"/>
+      </driver-properties>
+      <house-keeping-sleep-time>60000</house-keeping-sleep-time>
+      <maximum-connection-count>30</maximum-connection-count>　
+      <minimum-connection-count>5</minimum-connection-count>
+      <prototype-count>5</prototype-count>
+      <maximum-new-connections>3</maximum-new-connections>
+      <simultaneous-build-throttle>1</simultaneous-build-throttle>
+      <statistics>30s,10m,1d</statistics>
+      <statistics-log-level>ERROR</statistics-log-level>
+   </proxool>
+</proxool-config>
